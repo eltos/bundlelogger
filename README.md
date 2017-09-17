@@ -26,6 +26,22 @@ from bundlelogger import BundleLogger
 
 logging.Logger.manager.setLoggerClass(BundleLogger)
 ```
+#### Customisation
+```python
+
+LOG = logging.getLogger("mylog")
+LOG.setLevel(logging.DEBUG)
+
+# Specify the longest time in seconds to withhold a message and wait for the next repetition
+LOG.setMaxDelay(10*60)
+
+# Specify the minimum number of consecutive messages that are considered repetitions
+LOG.setMinRepetitions(5)
+```
+
+A demo can be found at the bottom of [bundlelogger.py](bundlelogger.py#L134)
+    
+
 ## License
 
 Copyright 2017 Philipp Niedermayer ([github.com/eltos](https://github.com/eltos))
